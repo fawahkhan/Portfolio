@@ -9,7 +9,6 @@ import {
 	SiShadcnui,
 	SiTailwindcss,
 } from 'react-icons/si';
-// import { TbBrandNextjs } from 'react-icons/tb';
 
 import { GlowBox } from '../components/glow-box';
 import { SectionTitle } from '../components/section-title.component';
@@ -23,11 +22,7 @@ const techs = [
 				icon: <FaPython  color='rgb(255, 255, 255)' />,
 				color: 'rgba(255, 255, 255, 0.4)',
 			},
-			// {
-			// 	title: 'Next JS',
-			// 	icon: <TbBrandNextjs color='rgb(255, 255, 255)' />,
-			// 	color: 'rgba(255, 255, 255, 0.4)',
-			// },
+			
 			{
 				title: 'React JS',
 				icon: <FaReact color='rgb(97, 219, 251)' />,
@@ -114,11 +109,6 @@ const techs = [
 	{
 		heading: 'Databases I Use',
 		items: [
-			// {
-			// 	title: 'MsSQL',
-			// 	icon: <DiMsqlServer color='rgb(230, 50, 42)' />,
-			// 	color: 'rgb(241, 83, 75, 0.5)',
-			// },
 			{
 				title: 'MongoDB',
 				icon: <DiMongodb color='rgb(0, 237, 100)' />,
