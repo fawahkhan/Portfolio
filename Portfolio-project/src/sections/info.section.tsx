@@ -13,6 +13,11 @@ export const InfoSection = () => {
 				className='first'
 				href='/#about-me'
 			/>
+			<FloatingButton
+				label='Contact Me'
+				className='contact'
+				href='/#contact'
+			/>
 			<p>Hi, I am</p>
 			<TextHover
 				text='Fawah'
@@ -23,6 +28,11 @@ export const InfoSection = () => {
 				label='Tech'
 				className='sec'
 				href='/#tech-stack'
+			/>
+			<FloatingButton
+				label='View Resume'
+				className='resume'
+				href='https://drive.google.com/file/d/1MihKGurH9awC5_wlB1QfQTbofEzymqXX/view'
 			/>
 
 			<div className='blur'></div>

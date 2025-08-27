@@ -1,6 +1,20 @@
 import { SectionTitle } from '../components/section-title.component';
+import { GithubButton } from '../components/github-button';
 
-const timeline = [
+type TimelineItem = {
+	title: string;
+	place: string;
+	timePeriod: string;
+	description: React.ReactNode;
+	githubUrl?: string;
+};
+
+type TimelineSection = {
+	title?: string;
+	items: TimelineItem[];
+};
+
+const timeline: TimelineSection[] = [
 	{
 		title: 'Projects',
 		items: [
@@ -8,6 +22,7 @@ const timeline = [
 				title: 'Admission Management System',
 				place: 'College Project',
 				timePeriod: 'April 2025 - June 2025',
+				githubUrl: 'https://github.com/fawahkhan/Admission-System1',
 				description: (
 					<ul>
 						<li>
@@ -24,7 +39,7 @@ const timeline = [
 							Implemented a user-friendly interface with responsive design, ensuring accessibility and ease of use. </li>
 					</ul>
 				),
-			},
+			} as TimelineItem,
 		],
 	},
 	{
@@ -34,6 +49,7 @@ const timeline = [
 				title: 'RoadSync',
 				place: 'Hack For Impact, IIIT Delhi' ,
 				timePeriod: 'March 2025',
+				githubUrl: 'https://github.com/fawahkhan/roadsync',
 				description: (
 					<ul>
 						<li>
@@ -51,7 +67,7 @@ const timeline = [
 						</li>
 					</ul>
 				),
-			},
+			} as TimelineItem,
 		],
 	},
 	
@@ -62,6 +78,7 @@ const timeline = [
 				title: 'EduBridge',
 				place: 'Education for All' ,
 				timePeriod: 'January 2025',
+				githubUrl: 'https://github.com/fawahkhan/edubridge',
 				description: (
 					<ul>
 						<li>
@@ -82,7 +99,7 @@ const timeline = [
 						</li>
 					</ul>
 				),
-			},
+			} as TimelineItem,
 		],
 	},
 	
@@ -94,7 +111,7 @@ const timeline = [
 				place: 'Maharaja Surajmal Institute of Technology',
 				timePeriod: '2024 - 2028',
 				description: 'Pursuing B.Tech in Information Technology with a focus on software development and web technologies. Eager to explore opportunities in DevOps and AI/ML.',
-			},
+			} as TimelineItem,
 		],
 	},
 ];
@@ -135,7 +152,7 @@ export const AboutMe = () => {
 							key={idx}
 						>
 							<h1>{title}</h1>
-							{items.map(({ title, place, timePeriod, description }, idx) => (
+							{items.map(({ title, place, timePeriod, description, githubUrl }, idx) => (
 								<div
 									className='timeline-list'
 									key={idx}
@@ -146,6 +163,9 @@ export const AboutMe = () => {
 											{place} | {timePeriod}
 										</p>
 										<div className='timeline-description'>{description}</div>
+										{githubUrl && (
+											<GithubButton href={githubUrl} />
+										)}
 									</div>
 								</div>
 							))}
